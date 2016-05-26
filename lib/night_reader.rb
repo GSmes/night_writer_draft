@@ -111,7 +111,7 @@ class NightReader
   def strip_the_unnecessary
     output = capitalize_the_indexed
     output = output.gsub('*', '')
-    output.gsub('#', '')
+    output = output.gsub('#', '')
   end
 
 #mark_spaces_and_add_new_line_marks_at_80_characters_per_line

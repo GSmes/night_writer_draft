@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'braille_map'
 
 class NightWriter
@@ -11,12 +12,21 @@ class NightWriter
   def print_output
     finalized_input_string
     output = ''
+    # binding.pry
     arranged_lines_in_array.each do |line|
        output += line + "\n"
     end
+    # binding.pry
     output = output.chomp
+    # binding.pry
     "#{output}"
   end
+
+  # def wrapped_arranged_lines_in_array
+  #   (0..(arranged_lines_in_array.length - 1) / 80).each do |i|
+  #     arranged_lines_in_array[i * 80, 80]
+  #   end
+  # end
 
   def finalized_input_string
     delete_new_lines
@@ -75,6 +85,12 @@ class NightWriter
   #   index_the_spaces.reverse.each do |index|
   #     input.insert(index + 1, "~")
   #   end
+  # end
+  #
+  # def index_the_line_breaks
+  #   input.chars.map.with_index do |chars, index|
+  #     index if chars == " "
+  #   end.compact
   # end
 
   # def index_the_line_breaks
